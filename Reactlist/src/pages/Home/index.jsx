@@ -2,13 +2,13 @@ import React, {useState, useEffect} from 'react';
 import './styles.css';
 import{ Card } from '../../componentes/Card';
 
-//estado, armazenando conteudo atual digitado do Input
+//estado, armazenando conteudo atual digitado no Input
 export function Home() {
   const [studentName, setStudentName] = useState('');
   const [students, setstudents] = useState([]);
   const [ user, setUser] = useState({name:'', avatar: ''});
 
-  /*quando esta função for chamada ela vai criar um novo objetos com duas propriedades, (Nome que vai esta armazenado no estado atual é hora atual do sistema)
+  /*quando esta função for chamada ela vai criar um novo objetos com duas propriedades, (Nome que vai esta armazenado no estado atual e hora atual do sistema)
   */
   function handleAddStudent() {
     const newStudent = {
@@ -20,12 +20,12 @@ export function Home() {
       })
     }
 
-    // Utilizando spread operator (...) para pegar oconteudo do estado anterior e colocar dentro do vetor/Array e mostrar na interface. princpio da imutabilidade
+    // Utilizando spread operator (...) para pegar oconteudo do estado anterior e colocar dentro do vetor/Array e mostrar na interface. princpio da imutabilidade.
     setstudents(sprevState => [...sprevState, newStudent]);
   }
 
 
-  //utilizando  API do Github para pegar de forma dinâmica nome e avatar e colocar na interface
+  //utilizando  API do Github para pegar de forma dinâmica nome e avatar e colocar na interface.
   useEffect(() => {
    fetch('https://api.github.com/users/samuelsam8')
    .then(response => response.json())
@@ -38,9 +38,10 @@ export function Home() {
   },[]);
 
   return (
+    
     <div className="container">
       <header>
-        <h1>Lista de presença</h1>
+      <h1>Lista de presença</h1>
         <div>
         <strong>{user.name}</strong>
         <img src={user.avatar} alt="Foto do perfil GitHub"/>
