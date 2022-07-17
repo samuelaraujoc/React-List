@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import './styles.css';
-import{ Card } from '../../componentes/Card';
+//cardProps importando typagem
+import{ Card, CardsProps} from '../../componentes/Card';
 
 //estado, armazenando conteudo atual digitado no Input
 export function Home() {
   const [studentName, setStudentName] = useState('');
-  const [students, setstudents] = useState([]);
+  const [students, setstudents] = useState<CardsProps[]>([]);
   const [ user, setUser] = useState({name:'', avatar: ''});
 
   /*quando esta função for chamada ela vai criar um novo objetos com duas propriedades, (Nome que vai esta armazenado no estado atual e hora atual do sistema)
@@ -60,7 +61,7 @@ export function Home() {
     {/* deixando cartões dinâmicos. Utilizando Time como Key  já que os segundo vão ser unicos para deixar o componente unico*/
       students.map(student => (
       <Card 
-        key={student.time}
+        key={student.name}
         name={student.name} 
         time={student.time}
       />
