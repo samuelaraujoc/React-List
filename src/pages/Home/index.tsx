@@ -21,12 +21,12 @@ export function Home() {
       })
     }
 
-    // Utilizando spread operator (...) para pegar oconteudo do estado anterior e colocar dentro do vetor/Array e mostrar na interface. princpio da imutabilidade.
+    // Utilizando spread operator (...) para pegar oconteudo do estado anterior e colocar dentro do vetor/Array e mostrar na interface. princípio da imutabilidade.
     setstudents(sprevState => [...sprevState, newStudent]);
   }
 
 
-  //utilizando  API do Github para pegar de forma dinâmica nome e avatar e colocar na interface.
+  //utilizando API do Github para pegar de forma dinâmica nome e avatar e colocar na interface.
   useEffect(() => {
    fetch('https://api.github.com/users/samuelsam8')
    .then(response => response.json())
