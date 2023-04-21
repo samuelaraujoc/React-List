@@ -28,7 +28,7 @@ export function Home() {
 
   //utilizando API do Github para pegar de forma dinâmica nome e avatar e colocar na interface.
   useEffect(() => {
-   fetch('https://api.github.com/users/samuelsam8')
+   fetch('https://api.github.com/users/samuelaraujoc')
    .then(response => response.json())
    .then(data =>{
     setUser({
